@@ -112,7 +112,7 @@ function About() {
         <div className="about-left-column">
           <div className="about-image-container">
             <div className="headshot-frame">
-              <img src="/images/headshot.jpg" alt="Daniel Spadafora" className="headshot-image" />
+              <img src="images/headshot.jpg" alt="Daniel Spadafora" className="headshot-image" />
               <div className="frame-corner tl"></div>
               <div className="frame-corner tr"></div>
               <div className="frame-corner bl"></div>
