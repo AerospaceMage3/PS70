@@ -241,6 +241,7 @@ function Home({ weeks }) {
     <div className="home">
       <div className="arcade-header">
         <h1 className="main-title">PS70 PORTFOLIO</h1>
+        <p className="subtitle">CHOOSE YOUR LEVEL</p>
         <div className="pixel-divider"></div>
       </div>
 
