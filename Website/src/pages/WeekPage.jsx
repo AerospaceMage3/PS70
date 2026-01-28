@@ -9,8 +9,6 @@ function WeekPage({ week }) {
         <li>Idea 1 - Description here</li>
         <li>Idea 2 - Description here</li>
         <li>Idea 3 - Description here</li>
-        <li>Idea 4 - Description here</li>
-        <li>Idea 5 - Description here</li>
       </ul>
     </div>
   )
