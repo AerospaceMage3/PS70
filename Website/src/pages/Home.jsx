@@ -236,7 +236,60 @@ const weekArt = {
   ),
 }
 
+import { useState, useRef, useEffect } from 'react'
+
 function Home({ weeks }) {
+  const [activeIndex, setActiveIndex] = useState(0)
+  const carouselRef = useRef(null)
+  const isScrolling = useRef(false)
+
+  useEffect(() => {
+    const carousel = carouselRef.current
+    if (!carousel) return
+
+    const handleWheel = (e) => {
+      e.preventDefault()
+      
+      if (isScrolling.current) return
+      isScrolling.current = true
+
+      const direction = e.deltaY > 0 ? 1 : -1
+      
+      setActiveIndex((prev) => {
+        const next = prev + direction
+        if (next < 0) return 0
+        if (next >= weeks.length) return weeks.length - 1
+        return next
+      })
+
+      setTimeout(() => {
+        isScrolling.current = false
+      }, 300)
+    }
+
+    carousel.addEventListener('wheel', handleWheel, { passive: false })
+    return () => carousel.removeEventListener('wheel', handleWheel)
+  }, [weeks.length])
+
+  const getCardStyle = (index) => {
+    const diff = index - activeIndex
+    const absDistance = Math.abs(diff)
+    
+    // Position calculations
+    const translateX = diff * 250
+    const translateZ = -absDistance * 100
+    const rotateY = diff * -15
+    const scale = absDistance === 0 ? 1 : Math.max(0.6, 1 - absDistance * 0.15)
+    const opacity = Math.max(0.3, 1 - absDistance * 0.2)
+    const zIndex = 10 - absDistance
+
+    return {
+      transform: `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`,
+      opacity,
+      zIndex,
+    }
+  }
+
   return (
     <div className="home">
       <div className="arcade-header">
@@ -245,36 +298,75 @@ function Home({ weeks }) {
         <div className="pixel-divider"></div>
       </div>
 
-      <div className="weeks-grid">
-        {weeks.map((week) => (
-          <Link
-            key={week.id}
-            to={`/week/${week.path}`}
-            className="cartridge"
-            data-color={week.color}
+      <div className="jukebox-container" ref={carouselRef}>
+        <div className="jukebox-frame">
+          <div className="jukebox-screen">
+            <div className="carousel-track">
+              {weeks.map((week, index) => (
+                <Link
+                  key={week.id}
+                  to={`/week/${week.path}`}
+                  className={`cartridge ${index === activeIndex ? 'active' : ''}`}
+                  data-color={week.color}
+                  style={getCardStyle(index)}
+                  onClick={(e) => {
+                    if (index !== activeIndex) {
+                      e.preventDefault()
+                      setActiveIndex(index)
+                    }
+                  }}
+                >
+                  <div className="cartridge-top">
+                    <div className="cartridge-grip"></div>
+                  </div>
+                  <div className="cartridge-body">
+                    <div className="cartridge-label">
+                      <div className="label-header">
+                        <span className="week-badge">WEEK {week.id}</span>
+                      </div>
+                      <div className="label-art">
+                        {weekArt[week.id]}
+                      </div>
+                      <div className="label-title">
+                        <span>{week.title.toUpperCase()}</span>
+                      </div>
+                    </div>
+                    <div className="cartridge-shine"></div>
+                  </div>
+                  <div className="cartridge-bottom">
+                    <div className="cartridge-pins"></div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div className="jukebox-reflection"></div>
+        </div>
+
+        <div className="jukebox-controls">
+          <button 
+            className="jukebox-btn prev"
+            onClick={() => setActiveIndex(prev => Math.max(0, prev - 1))}
+            disabled={activeIndex === 0}
           >
-            <div className="cartridge-top">
-              <div className="cartridge-grip"></div>
-            </div>
-            <div className="cartridge-body">
-              <div className="cartridge-label">
-                <div className="label-header">
-                  <span className="week-badge">WEEK {week.id}</span>
-                </div>
-                <div className="label-art">
-                  {weekArt[week.id]}
-                </div>
-                <div className="label-title">
-                  <span>{week.title.toUpperCase()}</span>
-                </div>
-              </div>
-              <div className="cartridge-shine"></div>
-            </div>
-            <div className="cartridge-bottom">
-              <div className="cartridge-pins"></div>
-            </div>
-          </Link>
-        ))}
+            ◄
+          </button>
+          <div className="jukebox-indicator">
+            <span className="current-week">WEEK {weeks[activeIndex]?.id}</span>
+            <span className="current-title">{weeks[activeIndex]?.title.toUpperCase()}</span>
+          </div>
+          <button 
+            className="jukebox-btn next"
+            onClick={() => setActiveIndex(prev => Math.min(weeks.length - 1, prev + 1))}
+            disabled={activeIndex === weeks.length - 1}
+          >
+            ►
+          </button>
+        </div>
+
+        <div className="scroll-hint">
+          <span>↕ SCROLL TO BROWSE ↕</span>
+        </div>
       </div>
 
       <div className="arcade-decoration">
