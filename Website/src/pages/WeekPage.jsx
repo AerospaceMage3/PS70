@@ -1,6 +1,38 @@
 import { Link } from 'react-router-dom'
 
 function WeekPage({ week }) {
+  // Week 1 Introduction - simple editable list
+  const renderIntroContent = () => (
+    <div className="simple-content">
+      <h3>Final Project Ideas</h3>
+      <ul>
+        <li>Idea 1 - Description here</li>
+        <li>Idea 2 - Description here</li>
+        <li>Idea 3 - Description here</li>
+        <li>Idea 4 - Description here</li>
+        <li>Idea 5 - Description here</li>
+      </ul>
+    </div>
+  )
+
+  // Default content for other weeks
+  const renderDefaultContent = () => (
+    <div className="doc-placeholder">
+      <h3>[ MISSION BRIEFING ]</h3>
+      <p>
+        This section will contain the documentation for Week {week.id}: {week.title}. 
+        Future content about this week's project, process, and learnings will be added here.
+      </p>
+      <p>
+        Add your images, code snippets, reflections, and other documentation to showcase 
+        your work on this weekly assignment.
+      </p>
+      <div className="placeholder-image-area">
+        <span>[ INSERT MEDIA HERE ]</span>
+      </div>
+    </div>
+  )
+
   return (
     <div className="week-page">
       <div className="arcade-header">
@@ -11,30 +43,8 @@ function WeekPage({ week }) {
 
       <div className="week-content">
         <div className="content-screen">
-          <div className="screen-header">
-            <span className="status-light"></span>
-            <span>DOCUMENTATION LOADING...</span>
-          </div>
-          
           <div className="documentation-area">
-            <div className="doc-placeholder">
-              <h3>[ MISSION BRIEFING ]</h3>
-              <p>
-                This section will contain the documentation for Week {week.id}: {week.title}. 
-                Future content about this week's project, process, and learnings will be added here.
-              </p>
-              <p>
-                Add your images, code snippets, reflections, and other documentation to showcase 
-                your work on this weekly assignment.
-              </p>
-              <div className="placeholder-image-area">
-                <span>[ INSERT MEDIA HERE ]</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="screen-footer">
-            <span>PRESS START TO CONTINUE</span>
+            {week.id === 1 ? renderIntroContent() : renderDefaultContent()}
           </div>
         </div>
 

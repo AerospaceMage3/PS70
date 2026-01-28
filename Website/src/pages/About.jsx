@@ -112,12 +112,7 @@ function About() {
         <div className="about-left-column">
           <div className="about-image-container">
             <div className="headshot-frame">
-              <div className="headshot-placeholder">
-                <div className="pixel-avatar">
-                  <span>PLAYER 1</span>
-                </div>
-                <div className="static-effect"></div>
-              </div>
+              <img src="/images/headshot.jpg" alt="Daniel Spadafora" className="headshot-image" />
               <div className="frame-corner tl"></div>
               <div className="frame-corner tr"></div>
               <div className="frame-corner bl"></div>
