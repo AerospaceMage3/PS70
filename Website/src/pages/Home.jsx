@@ -240,7 +240,7 @@ function Home({ weeks }) {
   return (
     <div className="home">
       <div className="arcade-header">
-        <h1 className="main-title">PS70 DOCUMENTATION</h1>
+        <h1 className="main-title">PS70 PORTFOLIO</h1>
         <div className="pixel-divider"></div>
       </div>
 
