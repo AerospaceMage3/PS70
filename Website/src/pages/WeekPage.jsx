@@ -4,9 +4,18 @@ function WeekPage({ week }) {
   // Week 1 Introduction - simple editable list
   const renderIntroContent = () => (
     <div className="simple-content">
+      <h3 style={{ color: 'white' }}>This week I built this website and thought up the following ideas for my final project:</h3>
       <h3>Final Project Ideas</h3>
       <ul>
-        <li>Idea 1 - Description here</li>
+        <li>Arcade Machine - I'd like to combine my interest and experience in programming and game design
+            with physical elements by building a gaming system "from scratch." I think this project is a 
+            good idea because it allows for a good deal of optionality in terms of difficultly. For example
+            I could use an advanced microcontroller and replicate Pong in python, or I restrict my
+            available processing/memory and design my own game with limited computing resources. The difficultly
+            in terms of the physical elements could also scale by, for example, building a large desk terminal
+            or by trying to make the system as small and portable as possible. This is definitely the idea I'm
+            most interested in.
+        </li>
         <li>Idea 2 - Description here</li>
         <li>Idea 3 - Description here</li>
       </ul>
