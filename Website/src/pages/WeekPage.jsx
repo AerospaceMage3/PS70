@@ -16,8 +16,17 @@ function WeekPage({ week }) {
             or by trying to make the system as small and portable as possible. This is definitely the idea I'm
             most interested in.
         </li>
-        <li>Idea 2 - Description here</li>
-        <li>Idea 3 - Description here</li>
+        <li>Drink Mixing Machine - I'd like to make a Keurig-like machine that lets the user select from a list of possible
+            beverages and automatically dispense the according mixture of drinks. The major challenge with this would be
+            learning how do control various different pumps and fluid pressures to keep the mixture as exact as possible.
+        </li>
+        <li>Handwriting Machine - In middle school, I had this idea of for a machine that could transcribe text onto
+            piece of paper using a pen whilst imitating my own Handwriting style. This would be an extension on the
+            common writing machine, though requiring a bit of extra precision and a good deal of software-work in order
+            effectively convert text into my handwriting.
+             
+        
+        </li>
       </ul>
     </div>
   )
