@@ -1,5 +1,7 @@
-import { Routes, Route } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import LoadingScreen from './components/LoadingScreen'
 import Home from './pages/Home'
 import About from './pages/About'
 import WeekPage from './pages/WeekPage'
@@ -19,6 +21,28 @@ const weeks = [
 ]
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true)
+  const location = useLocation()
+
+  // Show boot intro on initial visit (once per session)
+  useEffect(() => {
+    const hasSeenIntro = sessionStorage.getItem('hasSeenIntro')
+    if (!hasSeenIntro && location.pathname === '/') {
+      setIsLoading(true)
+    } else {
+      setIsLoading(false)
+    }
+  }, [location.pathname])
+
+  const handleLoadingComplete = () => {
+    sessionStorage.setItem('hasSeenIntro', 'true')
+    setIsLoading(false)
+  }
+
+  if (isLoading) {
+    return <LoadingScreen onComplete={handleLoadingComplete} />
+  }
+
   return (
     <div className="app">
       <Navbar weeks={weeks} />
