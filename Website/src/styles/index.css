@@ -1352,6 +1352,115 @@ body::before {
   margin-bottom: 0.5rem;
 }
 
+/* ============================================
+   WEEK DOCUMENTATION CONTENT
+   ============================================ */
+
+.week-doc-content {
+  padding: 1rem;
+}
+
+.doc-section {
+  margin-bottom: 3rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 2px solid var(--panel-border);
+}
+
+.doc-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.section-title {
+  font-family: var(--font-arcade);
+  font-size: 0.9rem;
+  color: var(--neon-cyan);
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 12px var(--neon-cyan);
+  letter-spacing: 2px;
+}
+
+.image-row {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.image-card {
+  flex: 1 1 0;
+  min-width: 240px;
+  border: 3px solid var(--panel-border);
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.4);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-card:hover {
+  border-color: var(--neon-pink);
+  box-shadow: 0 0 20px rgba(255, 0, 128, 0.25);
+}
+
+.image-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.image-caption {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  font-family: var(--font-arcade);
+  font-size: 0.45rem;
+  color: var(--text-secondary);
+  text-align: center;
+  letter-spacing: 1px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.text-box {
+  background: rgba(0, 0, 0, 0.35);
+  border: 2px solid var(--panel-border);
+  border-left: 4px solid var(--neon-green);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  border-radius: 4px;
+}
+
+.text-box p {
+  font-family: var(--font-terminal);
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.download-btn {
+  display: inline-block;
+  font-family: var(--font-arcade);
+  font-size: 0.55rem;
+  padding: 0.85rem 1.6rem;
+  color: var(--neon-yellow);
+  border: 3px solid var(--neon-yellow);
+  background: var(--panel-bg);
+  text-decoration: none;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.download-btn:hover {
+  background: var(--neon-yellow);
+  color: var(--dark-bg);
+  box-shadow: 0 0 25px var(--neon-yellow);
+  transform: translateY(-2px);
+}
+
 .idea-list {
   list-style: none;
   padding: 0;
