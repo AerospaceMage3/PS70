@@ -18,11 +18,11 @@ function Week2() {
         </div>
         <div className="image-row">
           <div className="image-card">
-            <img src="/images/week2/box-photo.png" alt="Laser-cut box assembled" />
+            <img src="images/week2/box-photo.png" alt="Laser-cut box assembled" />
             <span className="image-caption">Laser-cut box as glue drys</span>
           </div>
           <div className="image-card">
-            <img src="/images/week2/box-cad.png" alt="Box CAD design" />
+            <img src="images/week2/box-cad.png" alt="Box CAD design" />
             <span className="image-caption">Box CAD projection</span>
           </div>
         </div>
@@ -40,11 +40,11 @@ function Week2() {
         </div>
         <div className="image-row">
           <div className="image-card">
-            <img src="/images/week2/pen-cad-1.png" alt="Pen CAD model view 1" />
+            <img src="images/week2/pen-cad-1.png" alt="Pen CAD model view 1" />
             <span className="image-caption">Pen model — side view</span>
           </div>
           <div className="image-card">
-            <img src="/images/week2/pen-cad-2.png" alt="Pen CAD model view 2" />
+            <img src="images/week2/pen-cad-2.png" alt="Pen CAD model view 2" />
             <span className="image-caption">Pen model — full view</span>
           </div>
         </div>
@@ -74,11 +74,11 @@ function Week2() {
         </div>
         <div className="image-row">
           <div className="image-card">
-            <img src="/images/week2/button-cad-1.png" alt="Button CAD model view 1" />
+            <img src="images/week2/button-cad-1.png" alt="Button CAD model view 1" />
             <span className="image-caption">Button model — top view</span>
           </div>
           <div className="image-card">
-            <img src="/images/week2/button-cad-2.png" alt="Button CAD model view 2" />
+            <img src="images/week2/button-cad-2.png" alt="Button CAD model view 2" />
             <span className="image-caption">Button model — full view</span>
           </div>
         </div>
