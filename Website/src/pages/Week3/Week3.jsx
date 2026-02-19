@@ -89,7 +89,7 @@ function Week3() {
         </div>
         <div className="video-container compact">
           <video controls playsInline>
-            <source src="images/week3/WorkingGears.MOV" type="video/quicktime" />
+            <source src="images/week3/WorkingGears.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <span className="image-caption">Working gear train test</span>
@@ -126,7 +126,7 @@ function Week3() {
         </div>
         <div className="video-container">
           <video controls playsInline>
-            <source src="images/week3/Final.MOV" type="video/quicktime" />
+            <source src="images/week3/Final.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <span className="image-caption">Display turntable — final demo</span>
