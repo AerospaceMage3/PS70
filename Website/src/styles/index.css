@@ -1461,6 +1461,67 @@ body::before {
   transform: translateY(-2px);
 }
 
+/* Single-image rows (centered, capped width) */
+.image-row.single {
+  justify-content: center;
+}
+
+.image-row.single .image-card {
+  flex: 0 1 600px;
+}
+
+/* Video container */
+.video-container {
+  margin-bottom: 1.5rem;
+  border: 3px solid var(--panel-border);
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.4);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-container:hover {
+  border-color: var(--neon-pink);
+  box-shadow: 0 0 20px rgba(255, 0, 128, 0.25);
+}
+
+.video-container video {
+  width: 100%;
+  display: block;
+}
+
+/* Compact video — for portrait/vertical clips shown smaller & horizontally */
+.video-container.compact {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.video-container.compact video {
+  max-height: 350px;
+  object-fit: contain;
+}
+
+/* Smaller single-image variant */
+.image-row.single.small {
+  justify-content: center;
+}
+
+.image-row.single.small .image-card {
+  flex: 0 1 360px;
+}
+
+.video-container .image-caption {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  font-family: var(--font-arcade);
+  font-size: 0.45rem;
+  color: var(--text-secondary);
+  text-align: center;
+  letter-spacing: 1px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
 .idea-list {
   list-style: none;
   padding: 0;

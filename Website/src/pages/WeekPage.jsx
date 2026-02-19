@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom'
 import Week1 from './Week1/Week1'
 import Week2 from './Week2/Week2'
+import Week3 from './Week3/Week3'
 
 // Map week ids to their dedicated page components
 const weekComponents = {
   1: Week1,
   2: Week2,
+  3: Week3,
 }
 
 function WeekPage({ week }) {
