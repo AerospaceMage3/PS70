@@ -1412,6 +1412,20 @@ body::before {
   object-fit: contain;
 }
 
+/* Constrained row — caps height for portrait / tall images */
+.image-row.constrained {
+  align-items: center;
+}
+
+.image-row.constrained .image-card {
+  flex: 0 1 320px;
+}
+
+.image-row.constrained .image-card img {
+  max-height: 400px;
+  object-fit: contain;
+}
+
 .image-caption {
   display: block;
   padding: 0.5rem 0.75rem;
@@ -1520,6 +1534,55 @@ body::before {
   text-align: center;
   letter-spacing: 1px;
   background: rgba(0, 0, 0, 0.5);
+}
+
+/* Code blocks */
+.code-block {
+  margin-bottom: 1.5rem;
+  border: 2px solid var(--panel-border);
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.code-block .code-header {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 255, 65, 0.08);
+  border-bottom: 1px solid var(--panel-border);
+}
+
+.code-block .code-lang {
+  font-family: var(--font-arcade);
+  font-size: 0.45rem;
+  color: var(--neon-green, #00ff41);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.code-block pre {
+  margin: 0;
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+}
+
+.code-block pre code {
+  font-family: var(--font-terminal);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--neon-green, #00ff41);
+  white-space: pre;
+  tab-size: 2;
+}
+
+.text-box code {
+  font-family: var(--font-terminal);
+  font-size: 1.05rem;
+  color: var(--neon-green, #00ff41);
+  background: rgba(0, 255, 65, 0.08);
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
 }
 
 .idea-list {
