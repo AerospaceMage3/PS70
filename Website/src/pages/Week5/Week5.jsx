@@ -47,13 +47,13 @@ function Week5() {
         </div>
         <div className="image-row single small">
           <div className="image-card">
-            <img src="/images/week5/dice-photo.jpg" alt="3D-printed D20 die" />
+            <img src="images/week5/dice-photo.jpg" alt="3D-printed D20 die" />
             <span className="image-caption">The finished 3D-printed D20</span>
           </div>
         </div>
         <div className="video-container compact">
           <video controls playsInline>
-            <source src="/images/week5/dice-video.mp4" type="video/mp4" />
+            <source src="images/week5/dice-video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <span className="image-caption">D20 print showcase</span>
