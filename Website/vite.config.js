@@ -7,5 +7,12 @@ export default defineConfig({
   build: {
     outDir: '../docs',
     emptyDirBeforeWrite: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          three: ['three'],
+        },
+      },
+    },
   },
 })
