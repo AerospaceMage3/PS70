@@ -1,4 +1,4 @@
-function Week8() {
+function Week9() {
   return (
     <div className="week-doc-content">
       {/* === PROJECT OVERVIEW === */}
@@ -15,7 +15,7 @@ function Week8() {
         </div>
         <div className="image-row single small">
           <div className="image-card">
-            <img src="images/week8/final.jpg" alt="Final RC car" />
+            <img src="images/week9/final.jpg" alt="Final RC car" />
             <span className="image-caption">Completed ESP-NOW RC car</span>
           </div>
         </div>
@@ -35,15 +35,15 @@ function Week8() {
         </div>
         <div className="image-row">
           <div className="image-card">
-            <img src="images/week8/chasis.jpg" alt="RC car chassis" />
+            <img src="images/week9/chasis.jpg" alt="RC car chassis" />
             <span className="image-caption">Chassis layout during assembly</span>
           </div>
           <div className="image-card">
-            <img src="images/week8/motor.jpg" alt="Rear drive motor setup" />
+            <img src="images/week9/motor.jpg" alt="Rear drive motor setup" />
             <span className="image-caption">Rear motor drive assembly</span>
           </div>
           <div className="image-card">
-            <img src="images/week8/steeringmech.jpg" alt="Servo steering mechanism" />
+            <img src="images/week9/steeringmech.jpg" alt="Servo steering mechanism" />
             <span className="image-caption">Servo-based steering mechanism</span>
           </div>
         </div>
@@ -62,7 +62,7 @@ function Week8() {
         </div>
         <div className="image-row single">
           <div className="image-card">
-            <img src="images/week8/circuit.jpg" alt="RC car electronics circuit" />
+            <img src="images/week9/circuit.jpg" alt="RC car electronics circuit" />
             <span className="image-caption">Controller/receiver wiring and power electronics</span>
           </div>
         </div>
@@ -153,7 +153,7 @@ void loop() {
               event.currentTarget.volume = 0
             }}
           >
-            <source src="images/week8/demo.mp4" type="video/mp4" />
+            <source src="images/week9/demo.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <span className="image-caption">ESP-NOW RC car driving demo</span>
@@ -163,4 +163,4 @@ void loop() {
   )
 }
 
-export default Week8
+export default Week9
