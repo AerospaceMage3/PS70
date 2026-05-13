@@ -10,7 +10,7 @@ class ILI9341Display {
                  uint8_t backlightPin = D4, uint8_t dcPin = D5,
                  uint8_t csPin = D6, uint8_t rstPin = D3);
 
-  void begin(uint8_t rotation = 1);
+  void begin(uint8_t rotation = 3);
   void setBacklight(bool enabled);
   void clear(uint16_t color = ILI9341_BLACK);
   void fillScreen(uint16_t color);
@@ -19,6 +19,8 @@ class ILI9341Display {
   void drawText(int16_t x, int16_t y, const String& text,
                 uint16_t color = ILI9341_WHITE, uint8_t textSize = 2,
                 uint16_t bgColor = ILI9341_BLACK);
+
+  void drawVLine(int16_t x, int16_t y, int16_t h, uint16_t color);
 
   int16_t width() const;
   int16_t height() const;
@@ -31,4 +33,5 @@ class ILI9341Display {
   uint8_t csPin_;
   uint8_t rstPin_;
   Adafruit_ILI9341* tft_;
+  int16_t usableWidth_ = 0;
 };

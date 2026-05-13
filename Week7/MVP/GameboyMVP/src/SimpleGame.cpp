@@ -80,10 +80,11 @@ void SimpleGame::spawnEnemy() {
 
 void SimpleGame::updatePlayerLane() {
   Joystick::NormalizedReading norm = joystick_.readNormalized();
-  float normalizedX = constrain(norm.x, -1.0f, 1.0f);
+  float normalizedY = constrain(norm.y, -1.0f, 1.0f);
   unsigned long now = millis();
 
-  if (normalizedX <= -kMoveThreshold) {
+  // joy.y >= threshold → left; joy.y <= -threshold → right (landscape convention)
+  if (normalizedY >= kMoveThreshold) {
     if (now - lastPlayerMoveMs_ >= kPlayerMoveIntervalMs) {
       playerLane_ = max(0, playerLane_ - 1);
       lastPlayerMoveMs_ = now;
@@ -91,7 +92,7 @@ void SimpleGame::updatePlayerLane() {
     return;
   }
 
-  if (normalizedX >= kMoveThreshold) {
+  if (normalizedY <= -kMoveThreshold) {
     if (now - lastPlayerMoveMs_ >= kPlayerMoveIntervalMs) {
       playerLane_ = min(kLaneCount - 1, playerLane_ + 1);
       lastPlayerMoveMs_ = now;
