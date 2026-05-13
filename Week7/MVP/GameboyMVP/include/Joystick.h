@@ -24,7 +24,7 @@ class Joystick {
 
  private:
   float normalizeAxis(int raw, int center, int minObserved, int maxObserved) const;
-  int readAxisAveraged(uint8_t pin, uint8_t samples = 8) const;
+  int readAxisAveraged(uint8_t pin, uint8_t samples = 2) const;
   void updateObservedRange(const RawReading& reading);
 
   uint8_t xPin_;

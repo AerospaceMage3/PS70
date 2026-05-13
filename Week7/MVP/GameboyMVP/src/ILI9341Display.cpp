@@ -14,13 +14,17 @@ ILI9341Display::ILI9341Display(uint8_t sckPin, uint8_t mosiPin,
 
 void ILI9341Display::begin(uint8_t rotation) {
   if (tft_ == nullptr) {
-    tft_ = new Adafruit_ILI9341(csPin_, dcPin_, mosiPin_, sckPin_, rstPin_, -1);
+    // Hardware SPI: SCK/MOSI are fixed to the XIAO ESP32-C3's SPI peripheral
+    // pins (D8/D10). sckPin_/mosiPin_ are kept on the class as documentation
+    // and a wiring check, not passed to the driver (the bit-bang constructor
+    // is ~10-50x slower).
+    tft_ = new Adafruit_ILI9341(csPin_, dcPin_, rstPin_);
   }
 
   pinMode(backlightPin_, OUTPUT);
   digitalWrite(backlightPin_, HIGH);
 
-  tft_->begin(10000000);
+  tft_->begin(40000000);
   tft_->setRotation(rotation);
   tft_->fillScreen(ILI9341_BLACK);
 }

@@ -81,7 +81,6 @@ int Joystick::readAxisAveraged(uint8_t pin, uint8_t samples) const {
   uint32_t sum = 0;
   for (uint8_t i = 0; i < samples; ++i) {
     sum += analogRead(pin);
-    delayMicroseconds(150);
   }
 
   return static_cast<int>(sum / samples);
