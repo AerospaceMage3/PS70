@@ -9,6 +9,7 @@ import Week7 from './Week7/Week7'
 import Week9 from './Week9/Week9'
 import Week8 from './Week8/Week8'
 import Week10 from './Week10/Week10'
+import Week11 from './Week11/Week11'
 
 // Map week ids to their dedicated page components
 const weekComponents = {
@@ -22,6 +23,7 @@ const weekComponents = {
   8: Week8,
   10: Week10,
   9: Week9,
+  11: Week11,
 }
 
 function WeekPage({ week }) {
